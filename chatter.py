@@ -23,19 +23,70 @@
 import os, random, time
 
 voices = [
-    "Agnes",
-    "Albert",
-    "Alex",
-    "Bahh",
-    "Boing",
-    "Bruce",
-    "Bubbles",
-    "Deranged",
-    "Fred",
-    "Ralph",
-    "Vicki",
-    "Whisper",
-    "Zarvox"
+   "Agnes",
+   "Albert",
+   "Alex",
+   "Alice",
+   "Alva",
+   "Amelie",
+   "Anna",
+   "Bad",
+   "Bahh",
+   "Bells",
+   "Boing",
+   "Bruce",
+   "Bubbles",
+   "Carmit",
+   "Cellos",
+   "Damayanti",
+   "Daniel",
+   "Deranged",
+   "Diego",
+   "Ellen",
+   "Fiona",
+   "Fred",
+   "Good",
+   "Hysterical",
+   "Ioana",
+   "Joana",
+   "Junior",
+   "Kanya",
+   "Karen",
+   "Kathy",
+   "Kyoko",
+   "Laura",
+   "Lekha",
+   "Luciana",
+   "Mariska",
+   "Mei-Jia",
+   "Melina",
+   "Milena",
+   "Moira",
+   "Monica",
+   "Nora",
+   "Paulina",
+   "Pipe",
+   "Princess",
+   "Ralph",
+   "Samantha",
+   "Sara",
+   "Satu",
+   "Sin-ji",
+   "Tarik",
+   "Tessa",
+   "Thomas",
+   "Ting-Ting",
+   "Trinoids",
+   "Veena",
+   "Vicki",
+   "Victoria",
+   "Whisper",
+   "Xander",
+   "Yelda",
+   "Yuna",
+   "Zarvox",
+   "Zosia",
+   "Zuzana"
 ]
 
 # TODO: Might want to omit some words / use a different list.
@@ -50,7 +101,7 @@ commands = "[[rate 1]][[volm 0.1]]"
 
 while True:
     voice = random.choice(voices)
-    text = " ".join("".join(random.sample(words, words_per_word)) for _ in xrange(words_per_voice))
+    text = " ".join(" ".join(random.sample(words, words_per_word)) for _ in xrange(words_per_voice))
     print voice, "-", text
     os.spawnlp(os.P_NOWAIT, "say", "say", "-v", voice, commands, text)
     time.sleep(10)
